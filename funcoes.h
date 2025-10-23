@@ -10,7 +10,7 @@
 
 typedef struct usuario{
 
-    int codigo;
+    int matricula;
     char nome[40];
     char endereco[50];
     char telefone[15];
@@ -34,7 +34,7 @@ typedef struct {
     TipoApontador_usua primeiro;
     TipoApontador_usua ultimo;
 
-} TipoLista;
+} TipoLista_usua;
 
 // Cria o tipo usuario que contem o conteudo, proximo e anterior (Pedro Vinícius Souza Batista) //
 typedef struct TipoItem_usua {
@@ -46,33 +46,31 @@ typedef struct TipoItem_usua {
 } TipoItem_usua;
 
 // tela padrão que mostra a moldura (Pedro Vinicius Souza Batista) //
-void telaPadrao();
+void tela();
 
 // funcao que inicializa as cabecas da lista de usuarios (Pedro Vinicius Souza Batista) //
 void inicializador();
 
- 
+// tela que contem os pedidos de dados do usuario (Pedro Vinicius Souza Batista) //
+void tela_usuarios();
 
+// tela que contem os pedidos de dados dos livros (Pedro Vinicius Souza Batista) // 
+void tela_livro();
 
+// tela que contem as opcoes de generos (Pedro Vinicius Souza Batista) // 
+void tela_genero();
 
+// tela que contem as opcoes de movimentacao (Pedro Vinicius Souza Batista) //
+void tela_movimentacao();
 
+// funcao que pesquisa a matricula do usuario (Pedro Vinicius Souza Batista) //
+int pesquisa();
 
+// tela que da as opcoes de trabalho com o usuario (Pedro Vinicius Souza Batista) //
+void tela_Menu_Usuarios();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// funcao que localiza pontos da tela (Pedro Vinicius Souza Batista)//
+void gotoxy();
 
 
 #endif

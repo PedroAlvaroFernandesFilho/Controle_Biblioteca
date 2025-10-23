@@ -11,26 +11,22 @@ Subfuncao: Programa main que executara todos os arquivos.
 int main()
 {
 
-    int opc1;
-    int opc2;
+    int opc;
 
     do{
         tela();
         telainicial();
         gotoxy(07,23);
-        switch(opc1)
+        switch(opc)
         {
             case 1:
-                switch(opc2)
-                {
-                    case 1:
-
-                }
+            break; 
             case 2:
-                            
+            break;               
         }
 
-    }
+
+    }while(opc != 3);
 
 
 }
