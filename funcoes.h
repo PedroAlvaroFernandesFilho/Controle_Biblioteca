@@ -8,6 +8,7 @@
 #include <windows.h>
 #include <conio.h>
 
+// estrutura de dado do tipo usuario (Pedro Vinicius Souza Batista) //
 typedef struct usuario{
 
     int matricula;
@@ -17,7 +18,7 @@ typedef struct usuario{
     char email[30];
     char dt_nascimento[13];
     char dt_cadastro[13];
-    int status;
+    int status; // (0 = ativo | 1 = inativo) //
     int qt_emprestimos;
     char dt_emprestimo[13];
     char dt_devolucao[13];
@@ -25,7 +26,33 @@ typedef struct usuario{
 
 } reg_usuario;
 
-// definicao do dado que aponta os locais (Pedro Vinicius Souza Batista) //
+// estrutura de dado do tipo de livros (Pedro Vinicius Souza Batista) //
+typedef struct Livros {
+
+    int id_livro;
+    char titulo[50];
+    char autor[50];
+    char editora[50];
+    int ano_publicacao;
+    int status;
+    int id_usuario;
+    char dt_emprestimo[13];
+    char dt_devolucao[13];
+    float vl_multas;
+
+} reg_livros;
+
+// estrutura de dado do tipo de livros (Pedro Vinicius Souza Batista) //
+typedef struct generos {
+
+    int id_genero;
+    char ds_genero[40];
+    int status;
+
+} reg_generos; 
+// ===================================TIPOS DE DADOS UTILITARIOS DE USUARIO ======================================================//
+
+// definicao do dado que aponta os locais para o usuario (Pedro Vinicius Souza Batista) //
 typedef struct TipoItem_usua *TipoApontador_usua;
 
 // inicio e fim da lista (Pedro Vinicius Souza Batista) //
@@ -33,7 +60,7 @@ typedef struct {
     
     TipoApontador_usua primeiro;
     TipoApontador_usua ultimo;
-
+    
 } TipoLista_usua;
 
 // Cria o tipo usuario que contem o conteudo, proximo e anterior (Pedro Vinícius Souza Batista) //
@@ -44,6 +71,54 @@ typedef struct TipoItem_usua {
     reg_usuario conteudos;
 
 } TipoItem_usua;
+
+// ===================================TIPOS DE DADOS UTILITARIOS DE LIVRO ================================================//
+
+// definicao do dado que aponta os locais do livro (Pedro Vinicius Souza Batista) //
+typedef struct tipoitem_livro *tipoapontador_livro;
+
+// aponta para as cabeças da lista de livro (Pedro Vinicius Souza Batista) //
+typedef struct {
+    
+    tipoapontador_livro primeiro;
+    tipoapontador_livro ultimo;
+    
+} tipolista_livro;
+
+
+// Cria o tipo livro que contem o conteudo, proximo e anterior (Pedro Vinícius Souza Batista) // 
+typedef struct tipoitem_livro {
+
+    tipoapontador_livro anterior;
+    tipoapontador_livro proximo;
+    reg_livros conteudos;
+
+} tipoitem_livros;
+
+// ===================================TIPOS DE DADOS UTILITARIOS DE GENERO ============================================//
+
+// definicao do dado que aponta os locais do livro (Pedro Vinicius Souza Batista) //
+typedef struct tipoitem_genero *tipoapontador_genero;
+
+// aponta para as cabeças da lista de livro (Pedro Vinicius Souza Batista) //
+typedef struct tipolista_generos {
+    
+    tipoapontador_genero primeiro;
+    tipoapontador_genero ultimo;
+    
+} tipolista_genero;
+
+
+// Cria o tipo livro que contem o conteudo, proximo e anterior (Pedro Vinícius Souza Batista) // 
+typedef struct tipoitem_genero {
+
+    tipoapontador_genero anterior;
+    tipoapontador_genero proximo;
+    reg_generos conteudos;
+
+} tipoitem_genero;
+
+// =================================== FUNCOES GERAIS ===============================================================//
 
 // tela padrão que mostra a moldura (Pedro Vinicius Souza Batista) //
 void tela(); // telapadrao //
@@ -110,4 +185,12 @@ void removeUsuaFim();
 
 // funcao que remove usuario na posicao desejada (Pedro Vinicius Souza Batista) //
 void removeUsuaPosicao();
+
+void cadastroLivroinicio();
+
+void cadastroLivroFinal();
+
+void cadastroLivroPosicao();
+
+void insereLivroLista();
 #endif
