@@ -7,7 +7,7 @@ objetivo.: Desenvolver a funcao de pesquisa de codigo para evitar duplicatas de 
 */
 
 #include "funcoes.h"
-TipoApontador_usua pesquisa(TipoLista_usua *L, int matricula){
+TipoApontador_usua pesquisa_usuario(TipoLista_usua *L, int matricula){
     
     TipoApontador_usua p;
     p = L->primeiro;
