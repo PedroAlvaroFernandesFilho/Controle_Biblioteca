@@ -8,7 +8,7 @@ objetivo.: Funcao que ordena os generos por descrição
 
 #include "funcoes.h"
 
-void ordenar_nome(tipolista_genero *L)
+void ordenar_nome_genero(tipolista_genero *L)
 {
     tipoapontador_genero i, j;
     reg_generos aux;
