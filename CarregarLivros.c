@@ -8,7 +8,7 @@ objetivo.: Funcao que carrega os usuarios
 
 #include "funcoes.h"
 
-void ler_arquivo(tipolista_livro *L){
+void ler_arquivo_Livro(tipolista_livro *L){
 
     FILE *ptr;
     char *filename = "Livros.dat";

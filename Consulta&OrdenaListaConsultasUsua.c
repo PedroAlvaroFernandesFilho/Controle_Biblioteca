@@ -10,6 +10,7 @@ objetivo.: Funcao que chama as ordenações e o menu geral
 void consultar_lista(TipoLista_usua *L, int opc)
 {
     int i;
+    int linha;
     TipoApontador_usua p;
     if (L->primeiro == NULL)
     {
@@ -43,6 +44,7 @@ void consultar_lista(TipoLista_usua *L, int opc)
     printf("--  --------------------------  ---------------  ------------  | ------------");
 
     p = L->primeiro;
+    linha = 7;
     for (i = 7; p != NULL; i++)
     {
         {

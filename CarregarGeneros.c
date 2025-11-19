@@ -8,7 +8,7 @@ objetivo.: Funcao que carrega os genero
 
 #include "funcoes.h"
 
-void ler_arquivo(tipolista_genero *L){
+void ler_arquivo_Genero(tipolista_genero *L){
 
     FILE *ptr;
     char *filename = "Generos.dat";
@@ -28,8 +28,8 @@ void ler_arquivo(tipolista_genero *L){
         getch();
     }else{
         while(!feof(ptr)){
-            if(fread(&generos, sizeof(generos),1, ptr) != 0){
-                p = (tipoapontador_generos)malloc(sizeof(tipoitem_genero));
+            if(fread(&genero, sizeof(genero),1, ptr) != 0){
+                p = (tipoapontador_genero)malloc(sizeof(tipoitem_genero));
                 p->conteudos = genero;
                 if(L->primeiro == NULL){
                     p->proximo = NULL;

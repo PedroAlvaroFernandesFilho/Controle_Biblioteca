@@ -1,5 +1,5 @@
 /*
-Autor....: Pedro Alvaro Fernandes Filho
+Autor....: Pedro Alvaro Fernandes Filho | Pedro Vinícius Souza Batista(algumas correcoes)
 Data.....: 16/11/2025
 Membros..: Autor 1: 269554-2024 | 
            Autor 2: 291150-2025 |
@@ -10,7 +10,7 @@ objetivo.: Realizar devolucao de publicacao
 
 void devolucao(TipoLista_usua *LU, tipolista_livro *LL){
 
-    int id;
+    int id_livro;
     char resp;
     tipoapontador_livro pl;
     TipoApontador_usua pu;
@@ -21,9 +21,9 @@ void devolucao(TipoLista_usua *LU, tipolista_livro *LL){
 
     gotoxy(25, 8);
     printf("Codigo do livro: ");
-    scanf("%d", &id);
+    scanf("%d", &id_livro);
 
-    pl = busca_livro(LL, id);
+    pl = pesquisa_livro(LL, id_livro);
     if (pl == NULL)
     {
         gotoxy(8, 23);
@@ -40,7 +40,7 @@ void devolucao(TipoLista_usua *LU, tipolista_livro *LL){
         return;
     }
 
-    pu = busca_usuario(LU, pl->conteudos.id_usuario);
+    pu = pesquisa(LU, pl->conteudos.matricula);
 
     gotoxy(25, 10);
     printf("Confirma devolucao (S/N)? ");

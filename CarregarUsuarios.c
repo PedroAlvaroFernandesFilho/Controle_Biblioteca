@@ -8,7 +8,7 @@ objetivo.: Funcao que carrega os usuarios
 
 #include "funcoes.h"
 
-void ler_arquivo(TipoLista_usua *L){
+void ler_arquivo_usuario(TipoLista_usua *L){
 
     FILE *ptr;
     char *filename = "usuarios.dat";
@@ -28,7 +28,7 @@ void ler_arquivo(TipoLista_usua *L){
         getch();
     }else{
         while(!feof(ptr)){
-            if(fread(&func, sizeof(func),1, ptr) != 0){
+            if(fread(&usua, sizeof(usua),1, ptr) != 0){
                 p = (TipoApontador_usua)malloc(sizeof(TipoItem_usua));
                 p->conteudos = usua;
                 if(L->primeiro == NULL){
