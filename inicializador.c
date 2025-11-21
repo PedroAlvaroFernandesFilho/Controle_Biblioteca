@@ -12,5 +12,4 @@ void inicializador(TipoLista_usua *L){
 
     L->primeiro = NULL;
     L->ultimo = NULL;
-    
 }

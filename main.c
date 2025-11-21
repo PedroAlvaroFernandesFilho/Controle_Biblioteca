@@ -1,7 +1,7 @@
 /*
 Autor....: Pedro Vinícius Souza Batista
 Data.....: 15/10/2025
-Membros..: Autor 1: 269554-2024 | 
+Membros..: Autor 1: 269554-2024 |
            Autor 2: 291150-2025 |
 objetivo.: Desenvolver a tela inicial do programa, onde poderá ser selecionado duas vertentes (Usuario e Publicações)
 Subfuncao: Programa main que executara todos os arquivos.
@@ -10,12 +10,11 @@ Subfuncao: Programa main que executara todos os arquivos.
 
 int main()
 {
-
     int opc;
 
-    TipoLista_usua *L;
-    tipolista_livro *li;
-    tipolista_genero *g;
+    TipoLista_usua L;
+    tipolista_livro li;
+    tipolista_genero g;
 
     inicializador(&L);
     inicializador_livros(&li);
@@ -23,42 +22,40 @@ int main()
 
     system("color 1F");
 
-    reg_usuario *usuario;
-    usuario = (reg_usuario *)malloc(sizeof(reg_usuarios));
-    reg_livros *Livro;
-    Livro = (reg_livros *)malloc(sizeof(reg_livros));
-    reg_generos *Genero;
-    Genero = (reg_generos *)malloc(sizeof(reg_generos));
-    
     ler_arquivo_usuario(&L);
     ler_arquivo_Livro(&li);
-    ler_arquivo_Genero(&g);  
+    ler_arquivo_Genero(&g);
 
-    telainicial();
-    do{
+    do
+    {
+        telainicial();
+
+        gotoxy(2, 23);
+        printf("MSG.:                                     ");
+
+        gotoxy(15, 23);
+        scanf("%d", &opc);
+
         switch (opc)
         {
         case 1:
-            funcaoSwitchUsua(&L, &usuario, opc);
+            funcaoSwitchUsua(&L);
             break;
         case 2:
-            funcaoSwitchLivro(&li, &Livro, opc);
+            funcaoSwitchLivro(&li);
             break;
         case 3:
-            funcaoSwitchGenero(&g, &Genero, opc);
+            funcaoSwitchGenero(&g);
             break;
         case 4:
-            funcaoSwitchMovi();            
+            funcaoSwitchMovi(&L, &li);
             break;
         }
+    } while (opc != 5);
 
-    }while(opc != 5);
-
-    gravar_usuario(&L);
-    gravar_livro(&li);
-    gravar_genero(&g);
+    grava_usuario(&L);
+    grava_livros(&li);
+    grava_genero(&g);
 
     return 0;
 }
-
-

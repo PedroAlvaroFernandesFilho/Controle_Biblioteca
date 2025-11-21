@@ -7,10 +7,10 @@ objetivo.: Desenvolver a funcao de pesquisa de codigo para evitar duplicatas de 
 */
 
 #include "funcoes.h"
-tipoapontador_livro pesquisa_livro(tipolista_livro *L, int id_livro){
+tipoapontador_livro pesquisa_livro(tipolista_livro *li, int id_livro){
     
     tipoapontador_livro p;
-    p = L->primeiro;
+    p = li->primeiro;
     while (p != NULL)
     {
 

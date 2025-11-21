@@ -8,21 +8,21 @@ objetivo.: Remover livro no inicio da lista
 
 #include "funcoes.h"
 
-void removeLivroInicio(tipolista_livro *L){
+void removeLivroInicio(tipolista_livro *li){
 
     tipoapontador_livro p;
 
-    p = L->primeiro;
+    p = li->primeiro;
 
-    if (L->primeiro == L->ultimo)
+    if (li->primeiro == li->ultimo)
     {
-        L->primeiro = NULL;
-        L->ultimo = NULL;
+        li->primeiro = NULL;
+        li->ultimo = NULL;
     }
     else
     {
-        L->primeiro = L->primeiro->proximo;
-        L->primeiro->anterior = NULL;
+        li->primeiro = li->primeiro->proximo;
+        li->primeiro->anterior = NULL;
     }
     free(p);
 

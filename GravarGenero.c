@@ -8,7 +8,7 @@ objetivo.: funcao que grava generos no arquivo .dat
 
 #include "funcoes.h"
 
-void gravar(tipolista_genero *L){
+void grava_genero(tipolista_genero *g){
 
     FILE *ptr;
     char *filename = "Generos.dat";
@@ -17,7 +17,7 @@ void gravar(tipolista_genero *L){
     reg_generos genero;
     tipoapontador_genero p;
 
-    p = L->primeiro;
+    p = g->primeiro;
     tela();
     gotoxy(07,23);
     printf("GRAVAR DADOS DA LISTA NO ARQUIVO EM DISCO");

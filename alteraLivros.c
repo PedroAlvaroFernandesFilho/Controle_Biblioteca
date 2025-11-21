@@ -8,7 +8,7 @@ objetivo.: Altera dados de um livro
 
 #include "funcoes.h"
 
-void altera_livro(tipolista_livro *L){
+void altera_livro(tipolista_livro *li){
 
     tipoapontador_livro p;
     int id;
@@ -19,21 +19,21 @@ void altera_livro(tipolista_livro *L){
     do
     {
         tela();
-        tela_livro();
+        tela_Livro();
         gotoxy(20, 3);
         printf("ALTERAR LIVRO");
         gotoxy(8, 23);
         printf("Digite o codigo do livro que deseja alterar: ");
         scanf("%d", &id);
 
-        if (L->primeiro == NULL)
+        if (li->primeiro == NULL)
         {
             gotoxy(8, 23);
             printf("Nenhum livro cadastrado.");
             getch();
         }
 
-        p = L->primeiro;
+        p = li->primeiro;
         while (p != NULL && p->conteudos.id_livro != id)
         {
             p = p->proximo;
@@ -50,7 +50,7 @@ void altera_livro(tipolista_livro *L){
             do
             {
                 tela();
-                tela_livro();
+                tela_Livro();
                 gotoxy(20, 3);
                 printf("ALTERAR LIVRO");
                 gotoxy(38, 7);
@@ -83,7 +83,8 @@ void altera_livro(tipolista_livro *L){
                 else if (campo == 5)
                 {
                     gotoxy(38, 11);
-                    scanf("%d", &p->conteudos.ano_publicacao);
+                    fflush(stdin);
+                    fgets(p->conteudos.ano_publicacao, sizeof(p->conteudos.ano_publicacao), stdin);
                 }
                 else if (campo == 6)
                 {
@@ -108,7 +109,7 @@ void altera_livro(tipolista_livro *L){
         }
 
         tela();
-        tela_livro();
+        tela_Livro();
         gotoxy(20, 3);
         printf("ALTERAR LIVRO");
         gotoxy(8, 23);

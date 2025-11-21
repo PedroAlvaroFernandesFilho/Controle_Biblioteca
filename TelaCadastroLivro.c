@@ -10,11 +10,9 @@ objetivo.: Desenvolver a tela de cadastro de Livros
 void tela_Livro(){
 
     tela();
-    gotoxy(15,03);
-    printf("CADASTRO DE Livros");
 
     gotoxy(15, 7);
-    printf("Codigo.................: ");
+    printf("1 - Codigo.............: ");
     gotoxy(15, 8);
     printf("2 - Titulo.............: ");
     gotoxy(15, 9);

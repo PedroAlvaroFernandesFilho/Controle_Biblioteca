@@ -8,8 +8,8 @@ objetivo.: Inicializar a lista de generos
 
 #include "funcoes.h"
 
-void inicializador_generos(tipolista_genero *L){
+void inicializador_generos(tipolista_genero *g){
 
-    L->primeiro = NULL;
-    L->ultimo = NULL;
+    g->primeiro = NULL;
+    g->ultimo = NULL;
 }

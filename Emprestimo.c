@@ -8,7 +8,7 @@ objetivo.: Realizar emprestimo de publicacao
 
 #include "funcoes.h"
 
-void emprestimo(TipoLista_usua *LU, tipolista_livro *LL){
+void emprestimo(TipoLista_usua *L, tipolista_livro *li){
 
     int id;
     int matricula;
@@ -24,7 +24,7 @@ void emprestimo(TipoLista_usua *LU, tipolista_livro *LL){
     printf("Codigo do livro: ");
     scanf("%d", &id);
 
-    pl = busca_livro(LL, id);
+    pl = pesquisa_livro(li, id);
     if (pl == NULL)
     {
         gotoxy(8, 23);
@@ -45,7 +45,7 @@ void emprestimo(TipoLista_usua *LU, tipolista_livro *LL){
     printf("Matricula do usuario: ");
     scanf("%d", &matricula);
 
-    pu = busca_usuario(LU, matricula);
+    pu = pesquisa_usuario(L, matricula);
     if (pu == NULL)
     {
         gotoxy(8, 23);

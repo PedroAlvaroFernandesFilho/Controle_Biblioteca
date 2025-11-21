@@ -8,22 +8,22 @@ objetivo.: Cadastrar genero no inicio da lista
 
 #include "funcoes.h"
 
-void cadastroGeneroInicio(tipolista_genero *L, reg_generos genero){
+void cadastroGeneroInicio(tipolista_genero *g, reg_generos genero){
 
     tipoapontador_genero p;
     p = (tipoapontador_genero)malloc(sizeof(tipoitem_genero));
     p->conteudos = genero;
-    p->proximo = L->primeiro;
+    p->proximo = g->primeiro;
     p->anterior = NULL;
 
-    if (L->primeiro != NULL)
+    if (g->primeiro != NULL)
     {
-        L->primeiro->anterior = p;
+        g->primeiro->anterior = p;
     }
     else
     {
-        L->ultimo = p;
+        g->ultimo = p;
     }
 
-    L->primeiro = p;
+    g->primeiro = p;
 }

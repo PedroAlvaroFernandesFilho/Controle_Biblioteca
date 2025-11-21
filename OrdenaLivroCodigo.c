@@ -7,12 +7,12 @@ objetivo.: Funcao que ordena os livros por codigo
 */
 
 #include "funcoes.h"
-void ordenar_codigo_livro(tipolista_livro *L)
+void ordenar_codigo_livro(tipolista_livro *li)
 {
     tipoapontador_livro i, j;
     reg_livros aux;
 
-    for (i = L->primeiro; i != NULL; i = i->proximo)
+    for (i = li->primeiro; i != NULL; i = i->proximo)
     {
         for (j = i->proximo; j != NULL; j = j->proximo)
         {

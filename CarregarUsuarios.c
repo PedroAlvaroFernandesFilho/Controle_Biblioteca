@@ -1,5 +1,5 @@
 /*
-Autor....: Pedro Vinícius Souza Batista
+Autor....: Pedro Vinícius Souza Batista / Pedro Alvaro Fernandes Filho (pequenas correcoes)
 Data.....: 16/11/2025
 Membros..: Autor 1: 269554-2024 | 
            Autor 2: 291150-2025 |
@@ -47,6 +47,5 @@ void ler_arquivo_usuario(TipoLista_usua *L){
         fclose(ptr);
         gotoxy(07,23);
         printf("DADOS LIDOS COM SUCESSO");
-        getch();
     }
 }

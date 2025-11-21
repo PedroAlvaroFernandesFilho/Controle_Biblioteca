@@ -17,32 +17,27 @@ void menu_consultar(TipoLista_usua *L, reg_usuario *usuario){
         gotoxy(20, 03);
         printf("MENU CONSULTAR USUARIO");
         gotoxy(20, 8);
-        printf("1 - Consultar Fichario de usuario Geral");
+        printf("1 - Consultar Usuario Especifico");
         gotoxy(20, 10);
         printf("2 - Consultar em Ordem de Matricula");
         gotoxy(20, 12);
         printf("3 - Consultar em Ordem Alfabetica");
         gotoxy(20, 14);
-        printf("4 - Consultar usuario especifico");
-        gotoxy(20, 16);
-        printf("5 - Retornar ao Menu Principal");
+        printf("4 - Retornar ao Menu Principal");
         gotoxy(8, 23);
         printf("Digite sua Opcao: ");
         scanf("%d", &opc);
         switch (opc)
         {
         case 1:
-            consulta_usuario(L);
+            consultaUsuaUnico(L);
             break;
         case 2:
             consultar_lista(L, 2);
             break;
         case 3:
             consultar_lista(L, 3);
-            break;
-        case 4:
-            consultar_lista(L, 4);
-            break;
+            break;    
         }
-    } while (opc != 5);
+    } while (opc != 4);
 }

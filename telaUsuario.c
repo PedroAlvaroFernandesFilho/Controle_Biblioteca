@@ -8,26 +8,28 @@ objetivo.: Desenvolver a tela inicial do usuario, com as opcoes de cadastro(inic
 
 #include "funcoes.h"
 
-void tela_Menu_Usuarios(){
-
+void tela_Menu_Usuarios()
+{
     tela();
-    gotoxy();
+
+    gotoxy(25, 5);
     printf("MENU DE USUARIOS");
 
-    gotoxy();
+    gotoxy(25, 8);
     printf("1 - Inclusao");
 
-    gotoxy();
+    gotoxy(25, 9);
     printf("2 - Consulta");
 
-    gotoxy();
+    gotoxy(25, 10);
     printf("3 - Alteracao");
 
-    gotoxy();
+    gotoxy(25, 11);
     printf("4 - Exclusao");
 
-    gotoxy();
-    printf("5 - retornar");
+    gotoxy(25, 12);
+    printf("5 - Retornar");
 
-
+    gotoxy(8, 23);
+    printf("Opcao: ");
 }

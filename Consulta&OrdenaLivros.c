@@ -7,12 +7,12 @@ objetivo.: Funcao que chama as ordenações e o menu geral
 */
 
 #include "funcoes.h"
-void consultar_lista_livro(tipolista_livro *L, int opc)
+void consultar_lista_livro(tipolista_livro *li, int opc)
 {
     int i;
     int linha;
-    tipolista_livro p;
-    if (L->primeiro == NULL)
+    tipoapontador_livro p;
+    if (li->primeiro == NULL)
     {
         gotoxy(8, 23);
         printf("Nenhum livro cadastrado.");
@@ -20,13 +20,13 @@ void consultar_lista_livro(tipolista_livro *L, int opc)
     }
     if (opc == 2)
     {
-        ordenar_codigo_livro(L);
+        ordenar_codigo_livro(li);
         gotoxy(20, 03);
         printf("LISTA DE LIVROS - ORDENADA POR CODIGO");
     }
     else if(opc == 3)
     {
-        ordenar_nome_livro(L);
+        ordenar_nome_livro(li);
         gotoxy(20, 03);
         printf("LISTA DE LIVRO - ORDENADA POR ALFABETO");
     }
@@ -38,7 +38,7 @@ void consultar_lista_livro(tipolista_livro *L, int opc)
     gotoxy(2, 6);
     printf("--  -----------------------  -------------  ----------- | ------------   | ----");
 
-    p = L->primeiro;
+    p = li->primeiro;
     linha = 7;
     for (i = 7; p != NULL; i++)
     {
@@ -52,9 +52,9 @@ void consultar_lista_livro(tipolista_livro *L, int opc)
             gotoxy(56, i);
             printf("%s", p->conteudos.editora);
             gotoxy(70, i);
-            printf("%d", p->conteudos.ano_publicacao);
+            printf("%s", p->conteudos.ano_publicacao);
             gotoxy(76, i);
-            printf("%d", p->conteudos.status)
+            printf("%d", p->conteudos.status);
 
             p = p->proximo;
         }

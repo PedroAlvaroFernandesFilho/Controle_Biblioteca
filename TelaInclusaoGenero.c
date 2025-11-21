@@ -10,8 +10,6 @@ objetivo.: Desenvolver a tela de cadastro de genero
 void tela_genero(){
 
     tela();
-    gotoxy(15,03);
-    printf("INCLUSAO DE GENEROS");
 
     gotoxy(15, 7);
     printf("Codigo...............: ");

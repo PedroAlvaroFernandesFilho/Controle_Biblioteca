@@ -20,7 +20,7 @@ void consultar_lista(TipoLista_usua *L, int opc)
     }
     if (opc == 2)
     {
-        ordenar_codigo(L);
+        ordenar_matricula(L);
         gotoxy(20, 03);
         printf("LISTA DE USUARIOS - ORDENADA POR CODIGO");
     }
@@ -30,12 +30,7 @@ void consultar_lista(TipoLista_usua *L, int opc)
         gotoxy(20, 03);
         printf("LISTA DE USUARIOS - ORDENADA POR NOME");
     }
-    else if(opc == 4)
-    {
-        ordenar_salario(L);
-        gotoxy(20,03);
-        printf("CONSULTA USUARIOS DA LISTA UNICAMENTE");
-    }
+    
 
     tela();
     gotoxy(2, 5);
@@ -57,7 +52,7 @@ void consultar_lista(TipoLista_usua *L, int opc)
             gotoxy(56, i);
             printf("%s", p->conteudos.dt_nascimento);
             gotoxy(70, i);
-            printf("%.2f", p->conteudos.dt_cadastro);
+            printf("%s", p->conteudos.dt_cadastro);
 
             p = p->proximo;
         }

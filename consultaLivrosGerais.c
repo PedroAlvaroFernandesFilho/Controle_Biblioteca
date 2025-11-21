@@ -8,12 +8,12 @@ objetivo.: Consultar fichario geral de livros
 
 #include "funcoes.h"
 
-void consulta_livros_geral(tipolista_livro *L){
+void consulta_livros_geral(tipolista_livro *li){
 
     tipoapontador_livro p;
     int linha;
 
-    if (L->primeiro == NULL)
+    if (li->primeiro == NULL)
     {
         gotoxy(8, 23);
         printf("Nenhum livro cadastrado.");
@@ -27,7 +27,7 @@ void consulta_livros_geral(tipolista_livro *L){
     gotoxy(2, 6);
     printf("--  ----------------------------  ------------------------  ----  ------");
 
-    p = L->primeiro;
+    p = li->primeiro;
     linha = 7;
 
     while (p != NULL && linha < 22)
@@ -39,7 +39,7 @@ void consulta_livros_geral(tipolista_livro *L){
         gotoxy(38, linha);
         printf("%s", p->conteudos.autor);
         gotoxy(62, linha);
-        printf("%d", p->conteudos.ano_publicacao);
+        printf("%s", p->conteudos.ano_publicacao);
         gotoxy(70, linha);
         printf("%d", p->conteudos.status);
 

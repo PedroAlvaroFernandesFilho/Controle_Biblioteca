@@ -8,7 +8,7 @@ objetivo.: funcao que grava usuarios no arquivo .dat
 
 #include "funcoes.h"
 
-void gravar(TipoLista_usua *L){
+void grava_usuario(TipoLista_usua *L){
 
     FILE *ptr;
     char *filename = "usuarios.dat";

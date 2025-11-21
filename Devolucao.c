@@ -8,7 +8,7 @@ objetivo.: Realizar devolucao de publicacao
 
 #include "funcoes.h"
 
-void devolucao(TipoLista_usua *LU, tipolista_livro *LL){
+void devolucao(TipoLista_usua *L, tipolista_livro *li){
 
     int id_livro;
     char resp;
@@ -23,7 +23,7 @@ void devolucao(TipoLista_usua *LU, tipolista_livro *LL){
     printf("Codigo do livro: ");
     scanf("%d", &id_livro);
 
-    pl = pesquisa_livro(LL, id_livro);
+    pl = pesquisa_livro(li, id_livro);
     if (pl == NULL)
     {
         gotoxy(8, 23);
@@ -40,7 +40,7 @@ void devolucao(TipoLista_usua *LU, tipolista_livro *LL){
         return;
     }
 
-    pu = pesquisa(LU, pl->conteudos.matricula);
+    pu = pesquisa_usuario(L, pl->conteudos.id_usuario);
 
     gotoxy(25, 10);
     printf("Confirma devolucao (S/N)? ");

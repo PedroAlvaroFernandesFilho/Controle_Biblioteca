@@ -17,6 +17,7 @@ void menu_livros(tipolista_livro *L){
     do
     {
         tela();
+
         gotoxy(25, 5);
         printf("MENU DE LIVROS");
 
@@ -24,7 +25,7 @@ void menu_livros(tipolista_livro *L){
         printf("1 - Inclusao");
 
         gotoxy(25, 9);
-        printf("2 - Consulta geral");
+        printf("2 - Consulta");
 
         gotoxy(25, 10);
         printf("3 - Alteracao");
@@ -35,35 +36,46 @@ void menu_livros(tipolista_livro *L){
         gotoxy(25, 12);
         printf("5 - Retornar");
 
-        gotoxy(25, 15);
+        gotoxy(8, 23);
         printf("Opcao: ");
+        gotoxy(15, 23);
         scanf("%d", &opc);
 
-        if (opc == 1)
+        switch (opc)
         {
+        case 1:
             insereLivroLista(L, &livro, 0);
-        }
-        else if (opc == 2)
-        {
-            consulta_livros_geral(L);
-        }
-        else if (opc == 3)
-        {
+            break;
+
+        case 2:
+            menu_consultar_livro(L, &livro);
+            break;
+
+        case 3:
             altera_livro(L);
-        }
-        else if (opc == 4)
-        {
+            break;
+
+        case 4:
             tela();
-            gotoxy(25, 7);
+
+            gotoxy(25, 5);
             printf("EXCLUSAO DE LIVROS");
+
+            gotoxy(25, 8);
+            printf("1 - Exclusao no inicio");
+
             gotoxy(25, 9);
-            printf("1 - Excluir no inicio");
+            printf("2 - Exclusao no fim");
+
             gotoxy(25, 10);
-            printf("2 - Excluir no fim");
+            printf("3 - Exclusao por posicao");
+
             gotoxy(25, 11);
-            printf("3 - Excluir por posicao");
-            gotoxy(25, 13);
+            printf("4 - Retornar");
+
+            gotoxy(8, 23);
             printf("Opcao: ");
+            gotoxy(15, 23);
             scanf("%d", &opExc);
 
             if (opExc == 1)
@@ -78,6 +90,7 @@ void menu_livros(tipolista_livro *L){
             {
                 removeLivroPosicao(L);
             }
+            break;
         }
 
     } while (opc != 5);

@@ -7,12 +7,12 @@ objetivo.: Funcao que chama as ordenações e o menu geral
 */
 
 #include "funcoes.h"
-void consultar_lista_genero(tipolista_genero *L, int opc)
+void consultar_lista_genero(tipolista_genero *g, int opc)
 {
     int i;
     int linha;
     tipoapontador_genero p;
-    if (L->primeiro == NULL)
+    if (g->primeiro == NULL)
     {
         gotoxy(8, 23);
         printf("Nenhum genero cadastrado.");
@@ -20,24 +20,24 @@ void consultar_lista_genero(tipolista_genero *L, int opc)
     }
     if (opc == 2)
     {
-        ordenar_codigo_genero(L);
+        ordenar_codigo_genero(g);
         gotoxy(20, 03);
         printf("LISTA DE GENERO - ORDENADA POR CODIGO");
     }
     else if(opc == 3)
     {
-        ordenar_nome_genero(L);
+        ordenar_nome_genero(g);
         gotoxy(20, 03);
         printf("LISTA DE GENERO - ORDENADA POR NOME");
     }
 
     tela();
     gotoxy(2, 5);
-    printf("ID  Nome|Descricao              Status                                       ");
+    printf("ID  Nome  |  Descricao              Status                                     ");
     gotoxy(2, 6);
-    printf("--  --------------------------  ---------------                              ");
+    printf("--  --------------------------      ---------------                            ");
 
-    p = L->primeiro;
+    p = g->primeiro;
     for (i = 7; p != NULL; i++)
     {
         {

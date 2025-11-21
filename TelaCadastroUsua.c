@@ -10,11 +10,9 @@ objetivo.: Desenvolver a tela de cadastro de usuarios
 void tela_usuarios(){
 
     tela();
-    gotoxy(15,03);
-    printf("CADASTRO DE USUARIO");
 
     gotoxy(15, 7);
-    printf("Matricula...............: ");
+    printf("1 - Matricula...........: ");
     gotoxy(15, 8);
     printf("2 - Nome................: ");
     gotoxy(15, 9);

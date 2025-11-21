@@ -8,13 +8,13 @@ objetivo.: Remover livro em uma posicao da lista
 
 #include "funcoes.h"
 
-void removeLivroPosicao(tipolista_livro *L){
+void removeLivroPosicao(tipolista_livro *li){
 
     tipoapontador_livro p;
     int posicao;
     int i = 1;
 
-    if (L->primeiro == NULL)
+    if (li->primeiro == NULL)
     {
         gotoxy(8, 23);
         printf("Lista vazia. Nenhum livro para remover.");
@@ -26,7 +26,7 @@ void removeLivroPosicao(tipolista_livro *L){
     printf("Qual posicao deseja excluir: ");
     scanf("%d", &posicao);
 
-    p = L->primeiro;
+    p = li->primeiro;
 
     while (p != NULL && i < posicao)
     {
@@ -41,13 +41,13 @@ void removeLivroPosicao(tipolista_livro *L){
         getch();
         return;
     }
-    if (p == L->primeiro)
+    if (p == li->primeiro)
     {
-        removeLivroInicio(L);
+        removeLivroInicio(li);
     }
-    else if (p == L->ultimo)
+    else if (p == li->ultimo)
     {
-        removeLivroFim(L);
+        removeLivroFim(li);
     }
     else
     {

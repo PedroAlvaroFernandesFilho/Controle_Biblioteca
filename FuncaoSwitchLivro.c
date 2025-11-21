@@ -8,32 +8,34 @@ objetivo.: funcao que de switch que chama as outras funcoes
 
 #include "funcoes.h"
 
-void funcaoSwitchLivro(){
-
+void funcaoSwitchLivro(tipolista_livro *li)
+{
     int opc;
-
-    tela_Livro();
-    gotoxy(08,23);
-    printf("MSG.: ");
-    scanf("%d", &opc);
+    reg_livros livro;
 
     do{
-        switch (opc)
+        menu_livros(li);
+        gotoxy(15, 23);
+        scanf("%d", &opc);
+
+        switch(opc)
         {
         case 1:
-            insereLivroLista();
+            insereLivroLista(li, &livro, opc);
             break;
+
         case 2:
-            menu_consultar_livro(); 
+            menu_consultar_livro(li, &livro);
             break;
+
         case 3:
-            altera_Livro();
+            altera_livro(li);
             break;
+
         case 4:
-            removeLivroPosicao();
+            removeLivroPosicao(li);
             break;
         }
 
-    }while(opc != 5)
-
+    }while(opc != 5);
 }

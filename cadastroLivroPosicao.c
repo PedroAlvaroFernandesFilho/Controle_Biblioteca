@@ -8,16 +8,16 @@ objetivo.: Cadastrar livros em uma posicao da lista
 
 #include "funcoes.h"
 
-void cadastroLivroPosicao(tipolista_livro *L, reg_livros Livros, int posicao){
+void cadastroLivroPosicao(tipolista_livro *li, reg_livros Livros, int posicao){
 
     int i = 1;
     tipoapontador_livro p, q;
 
-    if((L->primeiro == NULL) && (L->ultimo == NULL)){
-        cadastroLivroinicio(L, Livros);
+    if((li->primeiro == NULL) && (li->ultimo == NULL)){
+        cadastroLivroinicio(li, Livros);
         return;
     }
-    p = L->primeiro;
+    p = li->primeiro;
 
     while(p != NULL && i < posicao){
         p = p->proximo;
@@ -28,7 +28,7 @@ void cadastroLivroPosicao(tipolista_livro *L, reg_livros Livros, int posicao){
         gotoxy(8, 23);
         printf("Posicao maior que a ultima. Inserido no final.");
         getch();
-        cadastroLivroFinal(L, Livros);
+        cadastroLivroFinal(li, Livros);
         return;
     }
 
@@ -42,7 +42,7 @@ void cadastroLivroPosicao(tipolista_livro *L, reg_livros Livros, int posicao){
     if (p->anterior != NULL){
         p->anterior->proximo = q;
     } else {
-        L->primeiro = q;
+        li->primeiro = q;
     }
 
     p->anterior = q;

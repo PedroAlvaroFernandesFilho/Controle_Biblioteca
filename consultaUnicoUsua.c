@@ -25,7 +25,7 @@ void consultaUsuaUnico(TipoLista_usua *L){
     {
         tela();
         tela_usuarios();
-        gotoxy(20, 3);
+        gotoxy(24, 3);
         printf("CONSULTAR USUARIO");
 
         gotoxy(38, 7);

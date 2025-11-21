@@ -1,5 +1,5 @@
 /*
-Autor....: Pedro Vinícius Souza Batista
+Autor....: Pedro Vinícius Souza Batista / Pedro Alvaro Fernandes Filho (pequenas correcoes)
 Data.....: 16/11/2025
 Membros..: Autor 1: 269554-2024 | 
            Autor 2: 291150-2025 |
@@ -8,7 +8,7 @@ objetivo.: Funcao que carrega os genero
 
 #include "funcoes.h"
 
-void ler_arquivo_Genero(tipolista_genero *L){
+void ler_arquivo_Genero(tipolista_genero *g){
 
     FILE *ptr;
     char *filename = "Generos.dat";
@@ -31,22 +31,21 @@ void ler_arquivo_Genero(tipolista_genero *L){
             if(fread(&genero, sizeof(genero),1, ptr) != 0){
                 p = (tipoapontador_genero)malloc(sizeof(tipoitem_genero));
                 p->conteudos = genero;
-                if(L->primeiro == NULL){
+                if(g->primeiro == NULL){
                     p->proximo = NULL;
                     p->anterior = NULL;
-                    L->primeiro = p;
-                    L->ultimo = p;
+                    g->primeiro = p;
+                    g->ultimo = p;
                 }else{
-                    p->anterior = L->ultimo;
-                    L->ultimo->proximo = p;
+                    p->anterior = g->ultimo;
+                    g->ultimo->proximo = p;
                     p->proximo = NULL;
-                    L->ultimo = p;
+                    g->ultimo = p;
                 }
             }
         }
         fclose(ptr);
         gotoxy(07,23);
         printf("DADOS LIDOS COM SUCESSO");
-        getch();
     }
 }

@@ -7,12 +7,12 @@ objetivo.: Funcao que ordena os generos por codigo
 */
 
 #include "funcoes.h"
-void ordenar_codigo_genero(tipolista_genero *L)
+void ordenar_codigo_genero(tipolista_genero *g)
 {
     tipoapontador_genero i, j;
     reg_generos aux;
 
-    for (i = L->primeiro; i != NULL; i = i->proximo)
+    for (i = g->primeiro; i != NULL; i = i->proximo)
     {
         for (j = i->proximo; j != NULL; j = j->proximo)
         {

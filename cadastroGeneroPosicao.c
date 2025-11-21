@@ -8,18 +8,18 @@ objetivo.: Cadastrar genero em uma posicao da lista
 
 #include "funcoes.h"
 
-void cadastroGeneroPosicao(tipolista_genero *L, reg_generos genero, int posicao){
+void cadastroGeneroPosicao(tipolista_genero *g, reg_generos genero, int posicao){
 
     int i = 1;
     tipoapontador_genero p, q;
 
-    if ((L->primeiro == NULL) && (L->ultimo == NULL))
+    if ((g->primeiro == NULL) && (g->ultimo == NULL))
     {
-        cadastroGeneroInicio(L, genero);
+        cadastroGeneroInicio(g, genero);
         return;
     }
 
-    p = L->primeiro;
+    p = g->primeiro;
 
     while (p != NULL && i < posicao)
     {
@@ -32,7 +32,7 @@ void cadastroGeneroPosicao(tipolista_genero *L, reg_generos genero, int posicao)
         gotoxy(8, 23);
         printf("Posicao maior que a ultima. Inserido no final.");
         getch();
-        cadastroGeneroFinal(L, genero);
+        cadastroGeneroFinal(g, genero);
         return;
     }
 
@@ -47,7 +47,7 @@ void cadastroGeneroPosicao(tipolista_genero *L, reg_generos genero, int posicao)
     }
     else
     {
-        L->primeiro = q;
+        g->primeiro = q;
     }
 
     p->anterior = q;

@@ -8,22 +8,22 @@ objetivo.: Cadastrar genero no fim da lista
 
 #include "funcoes.h"
 
-void cadastroGeneroFinal(tipolista_genero *L, reg_generos genero){
+void cadastroGeneroFinal(tipolista_genero *g, reg_generos genero){
 
     tipoapontador_genero p;
     p = (tipoapontador_genero)malloc(sizeof(tipoitem_genero));
     p->conteudos = genero;
     p->proximo = NULL;
-    p->anterior = L->ultimo;
+    p->anterior = g->ultimo;
 
-    if (L->ultimo != NULL)
+    if (g->ultimo != NULL)
     {
-        L->ultimo->proximo = p;
+        g->ultimo->proximo = p;
     }
     else
     {
-        L->primeiro = p;
+        g->primeiro = p;
     }
 
-    L->ultimo = p;
+    g->ultimo = p;
 }

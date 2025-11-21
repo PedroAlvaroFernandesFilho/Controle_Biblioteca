@@ -8,21 +8,21 @@ objetivo.: Remover livro no fim da lista
 
 #include "funcoes.h"
 
-void removeLivroFim(tipolista_livro *L){
+void removeLivroFim(tipolista_livro *li){
 
     tipoapontador_livro p;
 
-    p = L->ultimo;
+    p = li->ultimo;
 
-    if (L->primeiro == L->ultimo)
+    if (li->primeiro == li->ultimo)
     {
-        L->primeiro = NULL;
-        L->ultimo = NULL;
+        li->primeiro = NULL;
+        li->ultimo = NULL;
     }
     else
     {
-        L->ultimo = L->ultimo->anterior;
-        L->ultimo->proximo = NULL;
+        li->ultimo = li->ultimo->anterior;
+        li->ultimo->proximo = NULL;
     }
     free(p);
 

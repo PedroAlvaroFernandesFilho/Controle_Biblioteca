@@ -8,21 +8,21 @@ objetivo.: Cadastrar livros no começo da lista
 
 #include "funcoes.h"
 
-void cadastroLivroFinal(tipolista_livro *L, reg_livros Livros){
+void cadastroLivroFinal(tipolista_livro *li, reg_livros Livros){
 
     tipoapontador_livro p;
     p = (tipoapontador_livro)malloc(sizeof(tipoitem_livros));
     p->conteudos = Livros;
     p->proximo = NULL;
-    p->anterior = L->ultimo;
-    if (L->ultimo != NULL)
+    p->anterior = li->ultimo;
+    if (li->ultimo != NULL)
     {
-        L->ultimo->proximo = p;
+        li->ultimo->proximo = p;
     }
     else
     {
-        L->primeiro = p;
+        li->primeiro = p;
     }
-    L->ultimo = p;
+    li->ultimo = p;
 
 }

@@ -8,24 +8,28 @@ objetivo.: Desenvolver a tela inicial do programa
 
 #include "funcoes.h"
 
-void telainicial(){
-
+void telainicial()
+{
     tela();
-    gotoxy();
+
+    gotoxy(28, 5);
+    printf("MENU PRINCIPAL");
+
+    gotoxy(25, 8);
     printf("1 - Menu de Usuarios");
-    
-    gotoxy();
+
+    gotoxy(25, 9);
     printf("2 - Menu de Livros");
 
-    gotoxy();
+    gotoxy(25, 10);
     printf("3 - Menu de Generos");
 
-    gotoxy();
-    printf("4 - Menu de Movimentacao");
+    gotoxy(25, 11);
+    printf("4 - Movimentacao");
 
-    gotoxy();
-    printf("5 - Menu de Relatorios");
+    gotoxy(25, 12);
+    printf("5 - Sair");
 
-    gotoxy();
-    printf("6 - Finalizar");
+    gotoxy(8, 23);
+    printf("Opcao: ");
 }

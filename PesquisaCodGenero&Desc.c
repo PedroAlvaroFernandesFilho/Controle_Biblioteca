@@ -7,10 +7,10 @@ objetivo.: Desenvolver a funcao de pesquisa de codigo para evitar duplicatas de 
 */
 
 #include "funcoes.h"
-tipoapontador_genero pesquisa_genero(tipolista_genero *L, int id_genero){
+tipoapontador_genero pesquisa_genero_desc(tipolista_genero *g, int id_genero){
     
     tipoapontador_genero p;
-    p = L->primeiro;
+    p = g->primeiro;
     while (p != NULL)
     {
 
@@ -21,5 +21,4 @@ tipoapontador_genero pesquisa_genero(tipolista_genero *L, int id_genero){
         p = p->proximo;
     }
     return p;
-    return p->conteudos.ds_genero;
 }

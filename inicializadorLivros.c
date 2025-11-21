@@ -8,9 +8,9 @@ objetivo.: Inicializacao da lista de Livros
 
 #include "funcoes.h"
 
-void inicializador_livros(tipolista_livro *L){
+void inicializador_livros(tipolista_livro *li){
 
-    L->primeiro = NULL;
-    L->ultimo = NULL;
+    li->primeiro = NULL;
+    li->ultimo = NULL;
     
 }

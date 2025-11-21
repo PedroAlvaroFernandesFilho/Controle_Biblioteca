@@ -8,7 +8,7 @@ objetivo.: funcao que grava os livros cadastrados no arquivo .dat
 
 #include "funcoes.h"
 
-void gravar(tipolista_livro *L){
+void grava_livros(tipolista_livro *li){
 
     FILE *ptr;
     char *filename = "Livros.dat";
@@ -17,7 +17,7 @@ void gravar(tipolista_livro *L){
     reg_livros livro;
     tipoapontador_livro p;
 
-    p = L->primeiro;
+    p = li->primeiro;
     tela();
     gotoxy(07,23);
     printf("GRAVAR DADOS DA LISTA NO ARQUIVO EM DISCO");

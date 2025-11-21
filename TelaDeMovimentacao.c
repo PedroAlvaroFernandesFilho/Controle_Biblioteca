@@ -10,8 +10,6 @@ objetivo.: Desenvolver a tela de movimentacao
 void tela_movimentacao(){
 
     tela();
-    gotoxy(15,03);
-    printf("TELA DE MOVIMENTACAO");
 
     gotoxy(15, 7);
     printf("1 - Emprestimo.......: ");
