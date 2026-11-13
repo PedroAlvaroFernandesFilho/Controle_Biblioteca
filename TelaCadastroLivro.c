@@ -7,7 +7,7 @@ objetivo.: Desenvolver a tela de cadastro de Livros
 */
 
 #include "funcoes.h"
-void tela_Livro(){
+void tela_livro(){
 
     tela();
     gotoxy(15,03);
